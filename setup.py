@@ -22,10 +22,10 @@ setup(
     author_email='sachs.christian@gmail.com',
     url='https://github.com/csachs/mfisp-boxdetection',
     packages=find_packages(),
-    ext_modules=cythonize('boxdetection/fast_argrelextrema.pyx') if use_cython else None,
+    ext_modules=cythonize('mfisp_boxdetection/fast_argrelextrema.pyx') if use_cython else None,
     include_dirs=[numpy.get_include()],
     package_data={
-        'boxdetection': ['fast_argrelextrema.pyx']
+        'mfisp_boxdetection': ['fast_argrelextrema.pyx']
     },
     install_requires=['numpy', 'molyso'],
     classifiers=[
