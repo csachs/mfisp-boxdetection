@@ -16,7 +16,7 @@ except ImportError:
 
 setup(
     name='mfisp-boxdetection',
-    version='0.0.1.dev1',
+    version='0.0.1.dev2',
     description='mfisp-boxdetection',
     long_description='mfisp-boxdetection, see https://github.com/csachs/mfisp-boxdetection for info',
     author='Christian C. Sachs',
