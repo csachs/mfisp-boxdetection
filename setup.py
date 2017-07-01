@@ -6,11 +6,12 @@ documentation
 from setuptools import setup, find_packages
 
 
-import numpy
 try:
+    import numpy
     from Cython.Build import cythonize
     use_cython = True
 except ImportError:
+    print("Either numpy or cython is unavailable, skipping (optional) speed-up functions ...")
     use_cython = False
 
 setup(
@@ -23,7 +24,7 @@ setup(
     url='https://github.com/csachs/mfisp-boxdetection',
     packages=find_packages(),
     ext_modules=cythonize('mfisp_boxdetection/fast_argrelextrema.pyx') if use_cython else None,
-    include_dirs=[numpy.get_include()],
+    include_dirs=[numpy.get_include()] if use_cython else [],
     package_data={
         'mfisp_boxdetection': ['fast_argrelextrema.pyx']
     },
